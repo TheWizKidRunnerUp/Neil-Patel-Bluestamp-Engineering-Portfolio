@@ -12,17 +12,6 @@ You should comment out all portions of your portfolio that you have not complete
 | Neil P | Saint Francis High School | Electrical Engineering | Incoming Junior
 
 
-# Starter Milestone
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nsgoU_Tmdgo?si=OyY_uH3aMOAk1GA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-- I created a retro game arcade that consisted of many parts soldered together to create the final project.
-- The challenge that I faced was that has to soder very small and fragile parts.
-- I came very close to almost damaging other parts of the project with the hot iron.
-- I feel that after this project I am pretty comfortable with sodering.
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
@@ -103,3 +92,16 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
+
+# Starter Milestone
+
+**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nsgoU_Tmdgo?si=OyY_uH3aMOAk1GA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+- I created a retro game arcade that consisted of many parts soldered together to create the final project.
+- The challenge that I faced was that has to soder very small and fragile parts.
+- I came very close to almost damaging other parts of the project with the hot iron.
+- I feel that after this project I am pretty comfortable with sodering.
+
