@@ -109,5 +109,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nsgoU_Tmdgo?si=OyY_uH3aMOAk1GA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-I created a retro game arcade that consisted of many parts soldered together to create the final project. It is a cool idea that you can practice soldering in a usable application. The challenge that I faced was that has to soder very small and fragile parts. I came very close to almost damaging other parts of the project with the hot iron. I feel that after this project I am pretty comfortable with soldering.
+I created a retro game arcade that consisted of many parts soldered together to create the final project. It is a cool idea that you can practice soldering in a usable application. The challenge that I faced was that I had to solder very small and fragile parts. I came very close to almost damaging other parts of the project with the hot iron. I feel that after this project I am pretty comfortable with soldering. The project consisted of led dot matrix displays and switches that controlled the different games. There was also a buzzer that provided those retro themed sound tracks.
+
+#Starter Image
+
+<img src="NeilP.jpg" width="300" height="400">
 
