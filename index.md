@@ -5,8 +5,6 @@ You should comment out all portions of your portfolio that you have not complete
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
 
-```
-
 
 <!--- # Final Milestone
 
@@ -82,6 +80,7 @@ One of the best parts about Github is that you can view how other people set up 
 
 To watch the BSE tutorial on how to create a portfolio, click here.
 -->
+```
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
