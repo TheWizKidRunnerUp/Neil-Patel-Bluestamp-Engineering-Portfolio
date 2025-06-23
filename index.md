@@ -111,7 +111,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 I created a retro game arcade that consisted of many parts soldered together to create the final project. It is a cool idea that you can practice soldering in a usable application. The challenge that I faced was that I had to solder very small and fragile parts. I came very close to almost damaging other parts of the project with the hot iron. I feel that after this project I am pretty comfortable with soldering. The project consisted of led dot matrix displays and switches that controlled the different games. There was also a buzzer that provided those retro themed sound tracks.
 
-#Starter Image
 
-<img src="retro arcade console soldering.jpg" width="300" height="400">
+
+<img src="retro arcade console soldering.jpg" width="400" height="500">
 
