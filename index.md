@@ -1,5 +1,7 @@
 # Drum Sequencer
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+I am creating a drum sequencer which can loop through different drum sounds acting as a controller for GarageBand. It consistes of 16 switches which each controll a sixteenth note. 
+
+You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 
@@ -83,7 +85,10 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 
-![Headstone Image](NeilP.jpg)
+<!-- ![Headstone Image](NeilP.jpg) -->
+<img src="NeilP.jpg" width="300" height="400">
+
+
 
 
 
@@ -104,5 +109,5 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nsgoU_Tmdgo?si=OyY_uH3aMOAk1GA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-I created a retro game arcade that consisted of many parts soldered together to create the final project. It is a cool idea that you can practice soldering in a usable application. The challenge that I faced was that has to soder very small and fragile parts. I came very close to almost damaging other parts of the project with the hot iron. I feel that after this project I am pretty comfortable with sodering.
+I created a retro game arcade that consisted of many parts soldered together to create the final project. It is a cool idea that you can practice soldering in a usable application. The challenge that I faced was that has to soder very small and fragile parts. I came very close to almost damaging other parts of the project with the hot iron. I feel that after this project I am pretty comfortable with soldering.
 
