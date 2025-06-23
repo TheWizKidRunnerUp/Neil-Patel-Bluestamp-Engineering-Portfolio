@@ -113,5 +113,5 @@ I created a retro game arcade that consisted of many parts soldered together to 
 
 #Starter Image
 
-<img src="NeilP.jpg" width="300" height="400">
+<img src="retro arcade console soldering.jpg" width="300" height="400">
 
