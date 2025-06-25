@@ -64,18 +64,13 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JQvFbUo3X28?si=sCmlM85Y7WuRculP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+- All the parts are soldered and wired in this milestone. The AW9523 LED controller and the KB2040 kee boar driver both had header pins soldered to them. The PCB chips were soldered onto the switches, then onto header pins. These were all then connected to the board. Jumper cables were used between the AW9523 and KB2040, and then the AW was connected to the display, which was then connected to the rotary encoder. Wires were then used to connect the LEDs to the AW, and more wires were used to connect to the KB. Some challenges were that the wires were very hard to measure and strip correctly. I mismeasured so many times that I lost count. I hope to be able to provide a more stable wire solution in the future. Next, I am going to add some code to check the soldering of the switches and all the wiring.
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
-<img src="NeilP.jpg">
+<img src="projects_fritz16step2.jpg">
 
 # Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
 # SPDX-FileCopyrightText: 2022 John Park for Adafruit Industries
