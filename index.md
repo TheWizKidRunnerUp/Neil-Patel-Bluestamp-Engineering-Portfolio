@@ -54,11 +54,8 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dBH9e26Z2OY?si=Q033aMItKdWRe3Hb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+This milestone was to check all my wiring and soldering with a simple piece of code. I needed to be able to get and give signals to the switches. The most suprising part about this milestone was that it worked only on the second try. I was expecting there to be so more mistakes and loose connnections. I overcame the challenge of some loose wires when going through the first iteration. I need to be able to complete the display and encoder properly and that will be my next milestone.
+
 
 # First Milestone
 
