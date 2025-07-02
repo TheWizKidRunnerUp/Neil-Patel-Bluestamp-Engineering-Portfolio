@@ -78,7 +78,7 @@ Throughout the assembly process, measuring and stripping wires posed a significa
 
 <img src="projects_fritz16step2.jpg">
 
-taken from https://learn.adafruit.com/16-step-drum-sequencer/build-the-16-step-drum-sequencer
+taken from [Amazon link](https://learn.adafruit.com/16-step-drum-sequencer/build-the-16-step-drum-sequencer)
 
 # Code
 
@@ -332,6 +332,6 @@ I created a retro game arcade that consisted of many parts soldered together to 
 
 <img src="retro arcade console soldering.jpg" width="400" height="500">
 
-taken from ![Amazon link](https://www.amazon.com/Classic-Electronic-Soldering-Tetris-Machine/dp/B07HB3HPPJ/ref=asc_df_B07HB3HPPJ?mcid=b00b7893f57d3a19abc2f6c187ac48cd&hvocijid=13293929008172315056-B07HB3HPPJ-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=13293929008172315056&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-2281435179338&th=1
+taken from [Amazon](https://www.amazon.com/Classic-Electronic-Soldering-Tetris-Machine/dp/B07HB3HPPJ/ref=asc_df_B07HB3HPPJ?mcid=b00b7893f57d3a19abc2f6c187ac48cd&hvocijid=13293929008172315056-B07HB3HPPJ-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=13293929008172315056&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-2281435179338&th=1
 )
 
