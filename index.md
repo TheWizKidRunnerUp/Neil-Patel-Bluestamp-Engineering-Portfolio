@@ -39,11 +39,11 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uWQ6JhBLypA?si=uTIynOiIZFmFwxqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Summary:
+## Summary
 
 This milestone represents the completion of the project where all components were successfully integrated. I managed to add and correctly configure the display and encoder. The display functioned well, although the encoder initially faced several issues. These included a loose jumper cable and an overly secured cover that impeded proper clicking. Throughout the project, I gained experience in soldering, wiring, coding, particularly in MIDI and serial connections, which I found especially valuable. This experience has fueled my interest in further exploring mechanical and electrical engineering.
 
-Challenge:
+## Challenge
 
 One of the major challenges faced was the initial malfunctioning of the encoder due to hardware issues like loose jumper cables and an obstructive cover. Additionally, I encountered hazards like near burns from the soldering iron, the complexity of wiring to various ports, and the risk of damaging my projects. One significant hurdle was having to resolder numerous joints, which proved to be very time-consuming. These challenges provided a steep learning curve and highlighted areas for improvement in my technical processes and safety practices.
 
@@ -53,11 +53,11 @@ One of the major challenges faced was the initial malfunctioning of the encoder 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dBH9e26Z2OY?si=Q033aMItKdWRe3Hb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Summary Paragraph
+## Summary
 
 This milestone was pivotal in testing and validating my wiring and soldering skills. By using a straightforward piece of code, I was able to verify the functionality of sending and receiving signals to switches. Remarkably, everything operated correctly by the second attempt, which was unexpected as I had anticipated more issues due to potential errors and loose connections. Initially, I encountered challenges with some wires that were not securely connected, but these were resolved successfully. The next step is to focus on completing the display and encoder. My coding objective was to configure each LED to a low setting and test their ability to change in brightness.
 
-Challenge Paragraph
+## Challenge
 
 One significant challenge faced during this milestone was ensuring all wires were securely connected, as some were loose during the initial testing phase. This required careful attention and adjustment to avoid signal transmission errors. The anticipation of potential errors heightened my focus on each connection, ensuring stability and reliability. Despite these hurdles, resolving the loose connections was a learning experience, contributing to my overall understanding and skills in wiring and soldering techniques. The next challenge lies ahead in perfecting the display and encoder, which will test my ability to integrate and program complex components effectively.
 
@@ -66,11 +66,11 @@ One significant challenge faced during this milestone was ensuring all wires wer
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JQvFbUo3X28?si=sCmlM85Y7WuRculP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Summary Paragraph
+## Summary
 
 In the latest milestone, significant progress was made in assembling the electronic components. The AW9523 LED controller and the KB2040 keyboard driver were equipped with header pins, followed by soldering PCB chips onto switches and then attaching them to header pins. These components were interconnected on the board. Jumper cables were used to link the AW9523 and KB2040, which was then connected to the display and subsequently to the rotary encoder. Furthermore, wires were employed to connect LEDs to the AW9523 and additional wires to the KB2040.
 
-Challenge Paragraph
+## Challenge
 
 Throughout the assembly process, measuring and stripping wires posed a significant challenge. The precision required in measuring was difficult to achieve, leading to numerous miscalculations and wasted materials. This highlighted the need for a more reliable wiring solution to enhance stability in future projects. The next step involves coding to verify the accuracy of the soldered switches and wiring, ensuring the assembly functions as intended.
 
