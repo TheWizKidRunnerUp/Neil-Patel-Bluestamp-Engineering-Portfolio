@@ -40,12 +40,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uWQ6JhBLypA?si=uTIynOiIZFmFwxqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
-
+This is the milestone at which I finished everything and brought it together. I was able to add the display and encoder and make them function properly. The display was working pretty well, and the encoder had many issues. First, the encoder would not take inputs because one of the jumper cables was loose. Also, the cover of the encoder was on too much, preventing it from clicking. My biggest challenges at BSE were getting almost burnt by the iron multiple times, wiring the wires to different ports, almost frying my projects. Also, I had to resolder many joints, which was probably the most time-costly mistake. I learned about soldering, wiring, coding (specifically MIDI), and serial connections. I realize that the serial connection and MIDI coding are the most important to me. I hope to learn more about mechanical and electrical engineering.
 
 
 # Second Milestone
@@ -54,7 +49,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dBH9e26Z2OY?si=Q033aMItKdWRe3Hb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-This milestone was to check all my wiring and soldering with a simple piece of code. I needed to be able to get and give signals to the switches. The most suprising part about this milestone was that it worked only on the second try. I was expecting there to be so more mistakes and loose connnections. I overcame the challenge of some loose wires when going through the first iteration. I need to be able to complete the display and encoder properly and that will be my next milestone.
+This milestone was crucial for verifying all my wiring and soldering using a simple piece of code. The goal was to successfully send and receive signals to the switches. To my surprise, it all worked on just the second attempt. I had anticipated encountering more errors and loose connections. During the first iteration, I faced challenges with some loose wires, but I managed to overcome them. Moving forward, my next milestone is to complete the display and encoder properly. My code was to set each led to low and to see if they could get brighter and dimmer.
 
 
 # First Milestone
