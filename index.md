@@ -1,7 +1,6 @@
 # Drum Sequencer
 I am creating a drum sequencer which can loop and overlay mutiple drum sounds. This project uses garageband for its extensive library of these sound files. The sequencer itself consistes of 16 switches which each control a sixteenth note. There is a start and stop switch and a display that shows the BPM and current instrument you are using.
 
-You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
 
 
 
