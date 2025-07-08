@@ -41,7 +41,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 ## Summary
 
-This milestone represents the completion of the project where all components were successfully integrated. I managed to add and correctly configure the display and encoder. The display functioned well, although the encoder initially faced several issues. These included a loose jumper cable and an overly secured cover that impeded proper clicking. Throughout the project, I gained experience in soldering, wiring, coding, particularly in MIDI and serial connections, which I found especially valuable. This experience has fueled my interest in further exploring mechanical and electrical engineering.
+This milestone represents the completion of the project where all components were successfully integrated. I managed to add and correctly configure the display and encoder (how did i do this?). The display functioned well (what does well mean?), although the encoder initially faced several issues (see below). These included a loose jumper cable and an overly secured cover that impeded proper clicking. Throughout the project, I gained experience in soldering, wiring, coding, particularly in MIDI and serial connections, which I found especially valuable. This experience has fueled my interest in further exploring mechanical and electrical engineering.
 
 ## Challenge
 
@@ -49,7 +49,7 @@ One of the major challenges faced was the initial malfunctioning of the encoder 
 
 ## Photos
 
-<img src="3rdmile.HEIC" width="300" height="400">
+<img src="3rdmile.jpg" width="300" height="400">
 
 # Second Milestone
 
