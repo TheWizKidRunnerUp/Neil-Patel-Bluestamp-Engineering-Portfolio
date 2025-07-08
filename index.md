@@ -47,6 +47,10 @@ This milestone represents the completion of the project where all components wer
 
 One of the major challenges faced was the initial malfunctioning of the encoder due to hardware issues like loose jumper cables and an obstructive cover. Additionally, I encountered hazards like near burns from the soldering iron, the complexity of wiring to various ports, and the risk of damaging my projects. One significant hurdle was having to resolder numerous joints, which proved to be very time-consuming. These challenges provided a steep learning curve and highlighted areas for improvement in my technical processes and safety practices.
 
+## Photos
+
+<img src="3rdmile.HEIC" width="300" height="400">
+
 # Second Milestone
 
 
