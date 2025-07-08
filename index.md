@@ -49,7 +49,7 @@ One of the major challenges faced was the initial malfunctioning of the encoder 
 
 ## Photos
 
-<img src="3rdmile.jpg" width="300" height="400">
+<img src="3rdmile.jpeg" width="300" height="400">
 
 # Second Milestone
 
