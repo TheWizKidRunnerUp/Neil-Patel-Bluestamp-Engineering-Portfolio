@@ -322,12 +322,7 @@ while True:
 |:--:|:--:|:--:|:--:|
 | Adafruit KB2040 - RP2040 Kee BoarD | Used to control switch inputs and overall system logic | $8.95 | <a href="https://www.adafruit.com/product/5302"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
-| Adafruit 16x8 Charlieplexed PWM LED Matrix Driver - IS31FL3731 | Drives additional LEDs (like step indicators) | $5.95 | <a href="https://www.adafruit.com/product/2946"> Link </a> |
-| Adafruit TCA9548A I2C Multiplexer Breakout | Allows multiple I2C devices with the same address | $5.95 | <a href="https://www.adafruit.com/product/2717"> Link </a> |
-| Adafruit Stemma QT JST SH 4-pin Cable – 100mm Long | For connecting I2C devices via STEMMA QT ports | $0.95 | <a href="https://www.adafruit.com/product/4210"> Link </a> |
-| Adafruit NeoPixel Mini Button PCB - Pack of 5 | RGB backlit momentary pushbuttons for steps | $7.50 | <a href="https://www.adafruit.com/product/4350"> Link </a> |
-| Adafruit TRS MIDI Jack Breakout Board | Connects to standard MIDI DIN devices | $1.95 | <a href="https://www.adafruit.com/product/4693"> Link </a> |
-| Adafruit STEMMA QT / Qwiic JST SH 4-Pin to Premium Male Headers Cable | I2C to breadboard connection cable | $1.95 | <a href="https://www.adafruit.com/product/4209"> Link </a> |
+
 
 
 
