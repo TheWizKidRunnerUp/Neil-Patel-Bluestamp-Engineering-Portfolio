@@ -322,6 +322,17 @@ while True:
 |:--:|:--:|:--:|:--:|
 | Adafruit KB2040 - RP2040 Kee BoarD | Used to control switch inputs and overall system logic | $8.95 | <a href="https://www.adafruit.com/product/5302"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit 14-segment LED Alphanumeric Backpack - STEMMA QT | Controls all the LEDs inside the step switches | $6.00 | <a href="https://www.adafruit.com/product/1910"> Link </a> |
+| Step Switch with LED - Three Pack of Red Plastic with Red LED | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5499"> Link </a> |
+| Step Switch with LED - Three Pack of White Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5519"> Link </a> |
+| Step Switch with LED - Three Pack of Yellow Plastic with Red LED | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5516"> Link </a> |
+| Step Switch with LED - Three Pack of Black Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5502"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
 
 
 
