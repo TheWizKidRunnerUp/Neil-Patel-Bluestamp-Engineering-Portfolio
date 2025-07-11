@@ -327,8 +327,8 @@ while True:
 | Step Switch with LED - Three Pack of White Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5519"> Link </a> |
 | Step Switch with LED - Three Pack of Yellow Plastic with Red LED | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5516"> Link </a> |
 | Step Switch with LED - Three Pack of Black Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5502"> Link </a> |
-| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
-| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| PB86 Step Switch Breadboard-Friendly Breakout PCB - Pack of 12 | Controls all the LEDs inside the step switches | $3.95 | <a href="https://www.adafruit.com/product/5631"> Link </a> |
+| Break-away 0.1" 36-pin strip male header - Black - 10 pack | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/392"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
