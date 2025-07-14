@@ -322,17 +322,16 @@ while True:
 |:--:|:--:|:--:|:--:|
 | Adafruit KB2040 - RP2040 Kee BoarD | Used to control switch inputs and overall system logic | $8.95 | <a href="https://www.adafruit.com/product/5302"> Link </a> |
 | Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
-| Adafruit 14-segment LED Alphanumeric Backpack - STEMMA QT | Controls all the LEDs inside the step switches | $6.00 | <a href="https://www.adafruit.com/product/1910"> Link </a> |
-| Step Switch with LED - Three Pack of Red Plastic with Red LED | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5499"> Link </a> |
-| Step Switch with LED - Three Pack of White Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5519"> Link </a> |
-| Step Switch with LED - Three Pack of Yellow Plastic with Red LED | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5516"> Link </a> |
-| Step Switch with LED - Three Pack of Black Plastic with Red LED - PB86 | Controls all the LEDs inside the step switches | $4.50 | <a href="https://www.adafruit.com/product/5502"> Link </a> |
-| PB86 Step Switch Breadboard-Friendly Breakout PCB - Pack of 12 | Controls all the LEDs inside the step switches | $3.95 | <a href="https://www.adafruit.com/product/5631"> Link </a> |
-| Break-away 0.1" 36-pin strip male header - Black - 10 pack | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/392"> Link </a> |
-| Colorful Square Buttons - 15 pack | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/392"> Link </a> |
-| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
-| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
-| Adafruit AW9523 GPIO Expander and LED Driver Breakout | Controls all the LEDs inside the step switches | $4.95 | <a href="https://www.adafruit.com/product/4886"> Link </a> |
+| Adafruit 14-segment LED Alphanumeric Backpack - STEMMA QT | The controller 14 segment display | $6.00 | <a href="https://www.adafruit.com/product/1910"> Link </a> |
+| Step Switch with LED - Three Pack of Red Plastic with Red LED | Used as a form of input for the machine | $4.50 | <a href="https://www.adafruit.com/product/5499"> Link </a> |
+| Step Switch with LED - Three Pack of White Plastic with Red LED - PB86 | Used as a form of input for the machine | $4.50 | <a href="https://www.adafruit.com/product/5519"> Link </a> |
+| Step Switch with LED - Three Pack of Yellow Plastic with Red LED | Used as a form of input for the machine | $4.50 | <a href="https://www.adafruit.com/product/5516"> Link </a> |
+| Step Switch with LED - Three Pack of Black Plastic with Red LED - PB86 | Used as a form of input for the machine | $4.50 | <a href="https://www.adafruit.com/product/5502"> Link </a> |
+| PB86 Step Switch Breadboard-Friendly Breakout PCB - Pack of 12 | Attachs to the back of step switch so it can attach to breadboard | $3.95 | <a href="https://www.adafruit.com/product/5631"> Link </a> |
+| Break-away 0.1" 36-pin strip male header - Black - 10 pack | Header pins to solder onto almost everything | $4.95 | <a href="https://www.adafruit.com/product/392"> Link </a> |
+| Colorful Square Buttons - 15 pack | Used for the menu and start/stop buttons | $5.95 | <a href="https://www.adafruit.com/product/1010"> Link </a> |
+| Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft | Used for wiring up the whole project | $15.95 | <a href="https://www.adafruit.com/product/1311"> Link </a> |
+
 
 
 
