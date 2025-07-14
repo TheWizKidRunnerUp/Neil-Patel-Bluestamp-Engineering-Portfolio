@@ -33,6 +33,14 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 <!-- ![Headstone Image](NeilP.jpg) -->
 <img src="NeilP.jpg" width="300" height="400">
 
+# Modifications
+
+## Saving through Serial Connection
+
+For one of my modifications, I wanted to find a way to save presets of the beats made by the user, and I wanted the storage to be passive so it can persist without power. First, I thought to do this onto the KB2040 itself. I was going to create a local text file and edit it through Python. It turns out that the Circuit Python makes it so you cannot edit any files other than code.py and the library folder. There is a workaround I found which makes the code.py able to edit and make files, but the user themselves can't access the storage of the KB2040. That was a dead end because I need to be able to edit the code.py myself. 
+
+Next, I thought of a serial connection between the computer and KB2040. This would mean sending the presets to the computer for it to save them and being able to retrieve that info from the computer when needed.
+
 # Final Milestone
 
 
