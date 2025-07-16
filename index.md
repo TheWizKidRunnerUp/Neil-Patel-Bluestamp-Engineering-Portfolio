@@ -1,5 +1,5 @@
 # Drum Sequencer
-I am creating a drum sequencer which can loop and overlay mutiple drum sounds. This project uses garageband for its extensive library of these sound files. The sequencer itself consistes of 16 switches which each control a sixteenth note. There is a start and stop switch and a display that shows the BPM and current instrument you are using.
+This project can loop and overlay mutiple drum sounds. This project uses garageband for its extensive library of these sound files. The sequencer itself consistes of 16 switches which each control a sixteenth note. There is a start and stop switch and a display that shows the BPM and current instrument you are using.
 
 
 
@@ -31,7 +31,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 
 <!-- ![Headstone Image](NeilP.jpg) -->
-<img src="NeilP.jpg" width="300" height="400">
+<img src="NeilP.jpg" width="450" height="600">
 
 # Modifications
 
