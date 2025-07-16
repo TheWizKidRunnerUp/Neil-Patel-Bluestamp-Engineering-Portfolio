@@ -48,6 +48,9 @@ Finally, I just continually run the computer side code infinitely so it can dete
 For my second modification, I CADed the case and printed it. I wanted to do this case because it makes it way more presentable and finished. In my top part of the case, I had to add holes for all the switches, buttons, and the display. I added a slant for the display so it is more comfortable for the user to see it. The bottom part was just a box that held the breadboard securely. The buttons were secured against the top part, and the display was a snug fit into space.
 
 
+<img src="caseproject.png" width="400" height="300">
+
+
 
 # Final Milestone
 
@@ -63,7 +66,6 @@ This milestone represents the completion of the project where all components wer
 
 One of the major challenges faced was the initial malfunctioning of the encoder due to hardware issues like loose jumper cables and an obstructive cover. Additionally, I encountered hazards like near burns from the soldering iron, the complexity of wiring to various ports, and the risk of damaging my projects. One significant hurdle was having to resolder numerous joints, which proved to be very time-consuming. These challenges provided a steep learning curve and highlighted areas for improvement in my technical processes and safety practices.
 
-## Photos
 
 <img src="3rdmile.jpeg" width="400" height="300">
 
