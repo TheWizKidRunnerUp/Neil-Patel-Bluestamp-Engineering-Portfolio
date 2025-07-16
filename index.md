@@ -50,7 +50,7 @@ For my second modification, I CADed the case and printed it. I wanted to do this
 
 <img src="caseproject.png" width="600" height="450">
 
-photo of project with case
+↑ photo of project with case
 
 
 
