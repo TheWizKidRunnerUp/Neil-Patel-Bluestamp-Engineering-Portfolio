@@ -51,7 +51,7 @@ Finally, I just continually run the pc side code infinitely so it can detect the
 
 ## Summary
 
-This milestone represents the completion of the project where all components were successfully integrated. I managed to add and correctly configure the display and encoder (how did i do this?). The display functioned well (what does well mean?), although the encoder initially faced several issues (see below). These included a loose jumper cable and an overly secured cover that impeded proper clicking. Throughout the project, I gained experience in soldering, wiring, coding, particularly in MIDI and serial connections, which I found especially valuable. This experience has fueled my interest in further exploring mechanical and electrical engineering.
+This milestone represents the completion of the project where all components were successfully integrated. I managed to add and correctly configure the display and encoder through tweaking the I2C code for the display because the software was not configured. The display functioned as intended, displaying BPM and current instruments, although the encoder initially faced several issues. These included a loose jumper cable and an overly secured cover that impeded proper clicking. Throughout the project, I gained experience in soldering, wiring, coding, particularly in MIDI and serial connections, which I found especially valuable. This experience has fueled my interest in further exploring mechanical and electrical engineering.
 
 ## Challenges
 
