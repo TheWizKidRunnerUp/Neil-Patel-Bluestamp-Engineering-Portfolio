@@ -50,6 +50,8 @@ For my second modification, I CADed the case and printed it. I wanted to do this
 
 <img src="caseproject.png" width="400" height="300">
 
+photo of project with case
+
 
 
 # Final Milestone
@@ -68,6 +70,8 @@ One of the major challenges faced was the initial malfunctioning of the encoder 
 
 
 <img src="3rdmile.jpeg" width="400" height="300">
+
+photo of 3rd milestone
 
 # Second Milestone
 
