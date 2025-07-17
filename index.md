@@ -49,7 +49,11 @@ Finally, I just continually run the computer side code infinitely so it can dete
 
 ## Raspberry Pi
 
-My second modification was to try and make the drum sequencer self-sufficient with only power. Right now I am using my MacBook to provide the processing and audio files through GarageBand, but I wanted to use a Raspberry Pi instead of my computer so it could all fit in a relatively tiny box. In the beginning, I thought I could just plug the Drum sequencer into the Pi and use a normal audio interface like Ardour. Unfortunately, this was my biggest blunder because of many issues. First, the MIDI was not recognized, so I had to configure it in the command line. Second, Ardour would produce crackly and bad audio, so I tried to go directly through the Jack server itself (Jack is one of the audio systems built into the Raspberry Pi). Next, I tried to run the inputs from the MIDI through a Drumgizmo (this provides the necessary drum sound files) and then output it using Jack. Unfortunately again, this produced the same crackly and bad audio. I then tried using Fluidsynth, which replaced the Drumgizmo in this equation with its own sound files. Unfortunately for the third time, this did not work, producing the same crackly and bad audio. Finally, I changed the OS to an audio-focused one. This ultimately did nothing to fix my problem, and I had to give up on this modification.
+My second modification was to try and make the drum sequencer self-sufficient with only power. Right now I am using my MacBook to provide the processing and audio files through GarageBand, but I wanted to use a Raspberry Pi instead of my computer so it could all fit in a relatively tiny box. In the beginning, I thought I could just plug the Drum sequencer into the Pi and use a normal audio interface like Ardour. Unfortunately, this was my biggest blunder because of many issues. First, the MIDI was not recognized, so I had to configure it in the command line. Second, Ardour would produce crackly and bad audio, so I tried to go directly through the Jack server itself (Jack is one of the audio systems built into the Raspberry Pi). 
+
+Next, I tried to run the inputs from the MIDI through a Drumgizmo (this provides the necessary drum sound files) and then output it using Jack. Unfortunately again, this produced the same crackly and bad audio. 
+
+I then tried using Fluidsynth, which replaced the Drumgizmo in this equation with its own sound files. Unfortunately for the third time, this did not work, producing the same crackly and bad audio. Finally, I changed the OS to an audio-focused one. This ultimately did nothing to fix my problem, and I had to give up on this modification.
 
 ## Casing
 
@@ -60,7 +64,7 @@ For my third modification, I CADed the case and printed it. I wanted to do this 
 
 ↑ photo of project with case
 
-## Code
+## Code with Modifications
 
 ```c++
 # SPDX-FileCopyrightText: 2022 John Park for Adafruit Industries
