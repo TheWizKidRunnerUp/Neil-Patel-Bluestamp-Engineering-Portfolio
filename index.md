@@ -354,6 +354,10 @@ while True:
 | Colorful Square Buttons - 15 pack | Used for the menu and start/stop buttons | $5.95 | <a href="https://www.adafruit.com/product/1010"> Link </a> |
 | Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft | Used for wiring up the whole project | $15.95 | <a href="https://www.adafruit.com/product/1311"> Link </a> |
 
+# Resources
+
+Inspiration from [16 Step Drum Sequencer](https://learn.adafruit.com/16-step-drum-sequencer/build-the-16-step-drum-sequencer)
+
 
 
 
