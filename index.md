@@ -60,6 +60,415 @@ For my third modification, I CADed the case and printed it. I wanted to do this 
 
 ↑ photo of project with case
 
+## Code
+
+```c++
+# SPDX-FileCopyrightText: 2022 John Park for Adafruit Industries
+#
+# SPDX-License-Identifier: MIT
+# Drum Trigger Sequencer 2040
+# Based on code by Tod Kurt @todbot https://github.com/todbot/picostepseq
+
+# Uses General MIDI drum notes on channel 10
+# Range is note 35/B0 - 81/A4, but classic 808 set is defined here
+
+import usb_cdc
+import time
+from adafruit_ticks import ticks_ms, ticks_diff, ticks_add
+import board
+from digitalio import DigitalInOut, Pull
+import keypad
+import adafruit_aw9523
+import usb_midi
+from adafruit_seesaw import seesaw, rotaryio, digitalio
+from adafruit_debouncer import Debouncer
+from adafruit_ht16k33 import segments
+import json
+
+# define I2C
+i2c = board.STEMMA_I2C()
+
+num_steps = 16  # number of steps/switches
+num_drums = 11  # primary 808 drums used here, but you can use however many you like
+# Beat timing assumes 4/4 time signature, e.g. 4 beats per measure, 1/4 note gets the beat
+bpm = 120  # default BPM
+beat_time = 60/bpm  # time length of a single beat
+beat_millis = beat_time * 1000  # time length of single beat in milliseconds
+steps_per_beat = 4  # subdivide beats down to to 16th notes
+steps_millis = beat_millis / steps_per_beat  # time length of a beat subdivision, e.g. 1/16th note
+
+step_counter = 0  # goes from 0 to length of sequence - 1
+sequence_length = 16  # how many notes stored in a sequence
+curr_drum = 0
+curr_menu = 0
+curr_preset = 0
+playing = False
+menu_mode = False
+preset_mode = False
+preset_operation = ""  # "save" or "load"
+num_menu = 4
+num_preset = 3
+
+# Setup button
+start_button_in = DigitalInOut(board.A2)
+start_button_in.pull = Pull.UP
+start_button = Debouncer(start_button_in)
+
+menu_button_in = DigitalInOut(board.A3)
+menu_button_in.pull = Pull.UP
+menu_button = Debouncer(menu_button_in)
+
+# Setup switches
+switch_pins = (
+                board.TX, board.RX, board.D2, board.D3,
+                board.D4, board.D5, board.D6, board.D7,
+                board.D8, board.D9, board.D10, board.MOSI,
+                board.MISO, board.SCK, board.A0, board.A1
+)
+switches = keypad.Keys(switch_pins, value_when_pressed=False, pull=True)
+
+# Setup LEDs
+leds = adafruit_aw9523.AW9523(i2c, address=0x5B)  # both jumperes soldered on board
+for led in range(num_steps):  # turn them off
+    leds.set_constant_current(led, 0)
+leds.LED_modes = 0xFFFF  # constant current mode
+leds.directions = 0xFFFF  # output
+
+# Values for LED brightness 0-255
+offled = 0
+dimled = 2
+midled = 20
+highled = 150
+
+for led in range(num_steps):  # dramatic boot up light sequence
+    leds.set_constant_current(led, dimled)
+    time.sleep(0.05)
+time.sleep(0.5)
+
+# STEMMA QT Rotary encoder setup
+rotary_seesaw = seesaw.Seesaw(i2c, addr=0x36)  # default address is 0x36
+encoder = rotaryio.IncrementalEncoder(rotary_seesaw)
+last_encoder_pos = 0
+rotary_seesaw.pin_mode(24, rotary_seesaw.INPUT_PULLUP)  # setup the button pin
+knobbutton_in = digitalio.DigitalIO(rotary_seesaw, 24)  # use seesaw digitalio
+knobbutton = Debouncer(knobbutton_in)  # create debouncer object for button
+encoder_pos = -encoder.position
+
+# MIDI setup
+midi = usb_midi.ports[1]
+
+drum_names = [
+                "Bass", "Snar", "LTom", "MTom", "HTom",
+                "Clav", "Clap", "Cowb", "Cymb", "OHat", "CHat"
+]
+
+menu_names = [
+                "Save", "Load", "Clr", "Def"
+]
+
+preset_names = [
+                "P1", "P2", "P3"
+]
+
+drum_notes = [36, 38, 41, 43, 45, 37, 39, 56, 49, 46, 42]  # general midi drum notes matched to 808
+
+# default starting sequence needs to match number of drums in num_drums
+sequence = [
+    #     1e&a     2e&a     3e&a     4e&a
+    [1, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0,   1, 0, 0, 1],  # Kick — layered, hits deep
+    [0, 0, 0, 0,   1, 0, 0, 0,   0, 0, 0, 0,   1, 0, 0, 0],  # Snare — classic 2 & 4
+    [0, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0,   0, 0, 1, 0],  # Low tom — subtle ghost fill
+    [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 1],  # Mid tom — end punch
+    [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0],  # High tom — one offbeat accent
+    [0, 1, 0, 0,   0, 0, 1, 0,   0, 1, 0, 0,   0, 0, 1, 0],  # Rimshot — builds the groove
+    [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 1],  # Clap — surprise pop
+    [0, 0, 0, 0,   0, 1, 0, 0,   0, 0, 0, 1,   0, 0, 0, 0],  # Cowbell — call-and-response style
+    [1, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   1, 0, 0, 0],  # Cymbal — punchy entrance & anchor
+    [0, 1, 0, 0,   0, 1, 0, 0,   0, 1, 0, 0,   0, 1, 0, 0],  # Open HH — minimal groove pulse
+    [1, 0, 1, 0,   1, 0, 1, 0,   1, 0, 1, 0,   1, 0, 1, 0]   # Closed HH — tick engine
+]
+
+def request_save(name):
+    # Save 3 times with slight delays (redundancy/confirmation)
+    for i in range(3):
+        msg = {"command": "save", "name": name, "data": sequence}
+        usb_cdc.data.write((json.dumps(msg) + "\n").encode("utf-8"))
+        time.sleep(0.1)  # Small delay between saves
+        print(f"Save attempt {i+1}/3 sent")
+    time.sleep(1)# Optional debug
+
+def request_load(name):
+    msg = {"command": "load", "name": name}
+    usb_cdc.data.write((json.dumps(msg) + "\n").encode("utf-8"))
+
+def listen_for_preset():
+    global sequence
+    if usb_cdc.data.in_waiting:
+        try:
+            line = usb_cdc.data.readline().decode("utf-8").strip()
+            msg = json.loads(line)
+            if msg.get("command") == "preset_data":
+                sequence = msg.get("data", sequence)
+                print("Loaded preset from computer")
+                for i in range(sequence_length):
+                    light_steps(i, sequence[curr_drum][i])
+        except Exception as e:
+            print("Error loading preset:", e)
+
+def play_drum(note):
+    midi_msg_on = bytearray([0x99, note, 120])  # 0x90 is noteon ch 1, 0x99 is noteon ch 10
+    midi_msg_off = bytearray([0x89, note, 0])
+    midi.write(midi_msg_on)
+    midi.write(midi_msg_off)
+
+def light_steps(step, state):
+    if state:
+        leds.set_constant_current(step, midled)
+    else:
+        leds.set_constant_current(step, offled)
+
+def light_beat(step):
+    leds.set_constant_current(step, highled)
+
+def edit_mode_toggle():
+    # pylint: disable=global-statement
+    global edit_mode
+    # pylint: disable=used-before-assignment
+    edit_mode = (edit_mode + 1) % num_modes
+    display.fill(0)
+    if edit_mode == 0:
+        display.print(bpm)
+    elif edit_mode == 1:
+        display.print(drum_names[curr_drum])
+
+def menu_mode_toggle():
+    global menu_mode
+    menu_mode = not menu_mode
+    display.fill(0)
+    if menu_mode:
+        display.print(menu_names[curr_menu])
+    else:
+        if edit_mode == 1:
+            display.print(drum_names[curr_drum])
+        else:
+            display.print(bpm)
+
+
+
+def preset_mode_toggle():
+    global preset_mode
+    preset_mode = not preset_mode
+    display.fill(0)
+    if preset_mode:
+        display.print(preset_names[curr_preset])
+    else:
+        display.print(menu_names[curr_menu])
+
+def clear():
+    global sequence
+    sequence = [
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Kick — layered, hits deep
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Snare — classic 2 & 4
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Low tom — subtle ghost fill
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Mid tom — end punch
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # High tom — one offbeat accent
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Rimshot — builds the groove
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Clap — surprise pop
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Cowbell — call-and-response style
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Cymbal — punchy entrance & anchor
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0],  # Open HH — minimal groove pulse
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0]
+    ]
+    for i in range(num_steps):
+        leds.set_constant_current(i, offled)
+
+def setdef():
+    global sequence
+    sequence = [
+        [1, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0,   1, 0, 0, 1],  # Kick — layered, hits deep
+        [0, 0, 0, 0,   1, 0, 0, 0,   0, 0, 0, 0,   1, 0, 0, 0],  # Snare — classic 2 & 4
+        [0, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0,   0, 0, 1, 0],  # Low tom — subtle ghost fill
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 1],  # Mid tom — end punch
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 1, 0,   0, 0, 0, 0],  # High tom — one offbeat accent
+        [0, 1, 0, 0,   0, 0, 1, 0,   0, 1, 0, 0,   0, 0, 1, 0],  # Rimshot — builds the groove
+        [0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 1],  # Clap — surprise pop
+        [0, 0, 0, 0,   0, 1, 0, 0,   0, 0, 0, 1,   0, 0, 0, 0],  # Cowbell — call-and-response style
+        [1, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0,   1, 0, 0, 0],  # Cymbal — punchy entrance & anchor
+        [0, 1, 0, 0,   0, 1, 0, 0,   0, 1, 0, 0,   0, 1, 0, 0],  # Open HH — minimal groove pulse
+        [1, 0, 1, 0,   1, 0, 1, 0,   1, 0, 1, 0,   1, 0, 1, 0]
+    ]
+    for i in range(sequence_length):
+        light_steps(i, sequence[curr_drum][i])
+
+def handle_preset_selection():
+    """Handle save/load preset selection"""
+    global preset_mode, preset_operation
+    if preset_operation == "save":
+        if preset_names[curr_preset] == "P1":
+            request_save("preset1")
+        elif preset_names[curr_preset] == "P2":
+            request_save("preset2")
+        elif preset_names[curr_preset] == "P3":
+            request_save("preset3")
+    elif preset_operation == "load":
+        if preset_names[curr_preset] == "P1":
+            request_load("preset1")
+        elif preset_names[curr_preset] == "P2":
+            request_load("preset2")
+        elif preset_names[curr_preset] == "P3":
+            request_load("preset3")
+
+    # Exit preset mode after selection
+    preset_mode = False
+    preset_operation = ""
+    display.fill(0)
+    display.print(menu_names[curr_menu])
+
+def print_sequence():
+    print("sequence = [ ")
+    for k in range(num_drums):
+        print(" [" + ",".join('1' if e else '0' for e in sequence[k]) + "], #", drum_names[k])
+    print("]")
+
+# set the leds
+for j in range(sequence_length):
+    light_steps(j, sequence[curr_drum][j])
+
+display = segments.Seg14x4(i2c, address=(0x70))
+display.brightness = 0.3
+display.fill(0)
+display.show()
+display.print(bpm)
+display.show()
+
+edit_mode = 0  # 0=bpm, 1=voices
+num_modes = 2
+
+print("Drum Trigger 2040")
+
+display.fill(0)
+display.show()
+display.marquee("Drum", 0.05, loop=False)
+time.sleep(0.5)
+display.marquee("Trigger", 0.075, loop=False)
+time.sleep(0.5)
+display.marquee("2040", 0.05, loop=False)
+time.sleep(1)
+display.marquee("BPM", 0.05, loop=False)
+time.sleep(0.75)
+display.marquee(str(bpm), 0.1, loop=False)
+
+while True:
+    listen_for_preset()
+    start_button.update()
+    if start_button.fell:  # pushed encoder button plays/stops transport
+        if playing is True:
+            print_sequence()
+        playing = not playing
+        step_counter = 0
+        last_step = int(ticks_add(ticks_ms(), -steps_millis))
+        print("*** Play:", playing)
+
+    menu_button.update()
+    if menu_button.fell:  # pushed encoder button plays/stops transport
+        menu_mode_toggle()
+
+    if playing:
+        now = ticks_ms()
+        diff = ticks_diff(now, last_step)
+        if diff >= steps_millis:
+            late_time = ticks_diff(int(diff), int(steps_millis))
+            last_step = ticks_add(now, - late_time//2)
+
+            light_beat(step_counter)  # brighten current step
+            for i in range(num_drums):
+                if sequence[i][step_counter]:  # if there's a 1 at the step for the seq, play it
+                    play_drum(drum_notes[i])
+            light_steps(step_counter, sequence[curr_drum][step_counter])  # return led to step value
+            step_counter = (step_counter + 1) % sequence_length
+            encoder_pos = -encoder.position  # only check encoder while playing between steps
+            knobbutton.update()
+
+            # Handle knob button presses
+            if knobbutton.fell:
+                if not menu_mode:
+                    edit_mode_toggle()
+                elif preset_mode:
+                    handle_preset_selection()
+                else:
+                    # Handle main menu actions
+                    if menu_names[curr_menu] == "Clr":
+                        clear()
+                    elif menu_names[curr_menu] == "Def":
+                        setdef()
+                    elif menu_names[curr_menu] == "Save":
+                        preset_operation = "save"
+                        preset_mode_toggle()
+                    elif menu_names[curr_menu] == "Load":
+                        preset_operation = "load"
+                        preset_mode_toggle()
+
+    else:  # check the encoder all the time when not playing
+        encoder_pos = -encoder.position
+        knobbutton.update()
+
+        # Handle knob button presses (same logic as when playing)
+        if knobbutton.fell:
+            if not menu_mode:
+                edit_mode_toggle()
+            elif preset_mode:
+                handle_preset_selection()
+            else:
+                # Handle main menu actions
+                if menu_names[curr_menu] == "Clr":
+                    clear()
+                elif menu_names[curr_menu] == "Def":
+                    setdef()
+                elif menu_names[curr_menu] == "Save":
+                    preset_operation = "save"
+                    preset_mode_toggle()
+                elif menu_names[curr_menu] == "Load":
+                    preset_operation = "load"
+                    preset_mode_toggle()
+
+    # switches add or remove steps
+    switch = switches.events.get()
+    if switch:
+        if switch.pressed:
+            i = switch.key_number
+            sequence[curr_drum][i] = not sequence[curr_drum][i]  # toggle step
+            light_steps(i, sequence[curr_drum][i])  # toggle light
+
+    if encoder_pos != last_encoder_pos:
+        encoder_delta = encoder_pos - last_encoder_pos
+        if not menu_mode:
+            if edit_mode == 0:
+                bpm = bpm + encoder_delta  # or (encoder_delta * 5)
+                bpm = min(max(bpm, 10), 400)
+                beat_time = 60/bpm  # time length of a single beat
+                beat_millis = beat_time * 1000
+                steps_millis = beat_millis / steps_per_beat
+                display.fill(0)
+                display.print(bpm)
+            if edit_mode == 1:
+                curr_drum = (curr_drum + encoder_delta) % num_drums
+                # quickly set the step leds
+                for i in range(sequence_length):
+                    light_steps(i, sequence[curr_drum][i])
+                display.print(drum_names[curr_drum])
+        else:
+            if preset_mode:
+                curr_preset = (curr_preset + encoder_delta) % num_preset
+                display.fill(0)
+                display.print(preset_names[curr_preset])
+            else:
+                curr_menu = (curr_menu + encoder_delta) % num_menu
+                display.fill(0)
+                display.print(menu_names[curr_menu])
+
+        last_encoder_pos = encoder_pos
+
+```
 
 
 # Final Milestone
