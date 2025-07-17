@@ -35,6 +35,10 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 # Modifications
 
+
+
+
+
 ## Saving through Serial Connection
 
 For one of my modifications, I wanted to find a way to save presets of the beats made by the user, and I wanted the storage to be passive so it can persist without power. First, I thought to do this on the KB2040 itself. I was going to create a local text file and edit it through Python. It turns out that CircuitPython makes it so you cannot edit any files other than code.py and the library folder. There is a workaround I found which makes the code.py able to edit and make files, but the user themselves can't access the storage of the KB2040. That was a dead end because I need to be able to edit the code.py myself. 
@@ -43,9 +47,13 @@ Next, I thought of a serial connection between the computer and KB2040. This wou
 
 Finally, I just continually run the computer side code infinitely so it can detect the USB connection and interact with the device when it is connected.
 
+## Raspberry Pi
+
+My second modification was to try and make the drum sequencer self-sufficient with only power. Right now I am using my MacBook to provide the processing and audio files through GarageBand, but I wanted to use a Raspberry Pi instead of my computer so it could all fit in a relatively tiny box. In the beginning, I thought I could just plug the Drum sequencer into the Pi and use a normal audio interface like Ardour. Unfortunately, this was my biggest blunder because of many issues. First, the MIDI was not recognized, so I had to configure it in the command line. Second, Ardour would produce crackly and bad audio, so I tried to go directly through the Jack server itself (Jack is one of the audio systems built into the Raspberry Pi). Next, I tried to run the inputs from the MIDI through a Drumgizmo (this provides the necessary drum sound files) and then output it using Jack. Unfortunately again, this produced the same crackly and bad audio. I then tried using Fluidsynth, which replaced the Drumgizmo in this equation with its own sound files. Unfortunately for the third time, this did not work, producing the same crackly and bad audio. Finally, I changed the OS to an audio-focused one. This ultimately did nothing to fix my problem, and I had to give up on this modification.
+
 ## Casing
 
-For my second modification, I CADed the case and printed it. I wanted to do this case because it makes it way more presentable and finished. In my top part of the case, I had to add holes for all the switches, buttons, and the display. I added a slant for the display so it is more comfortable for the user to see it. The bottom part was just a box that held the breadboard securely. The buttons were secured against the top part, and the display was a snug fit into space.
+For my third modification, I CADed the case and printed it. I wanted to do this case because it makes it way more presentable and finished. In my top part of the case, I had to add holes for all the switches, buttons, and the display. I added a slant for the display so it is more comfortable for the user to see it. The bottom part was just a box that held the breadboard securely. The buttons were secured against the top part, and the display was a snug fit into space.
 
 
 <img src="caseproject.png" width="600" height="450">
