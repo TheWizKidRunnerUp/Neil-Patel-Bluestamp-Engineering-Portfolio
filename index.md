@@ -36,8 +36,9 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 # Modifications
 
 
+## Tap Mode
 
-
+This mode makes the switch play a sound instantly when pressed. It becomes a beat pad rather than a sequencer when in this mode. This one had a lot of issues though because of the fact that it was running through a while loop. This means that pressing switches simultaneously would result in one after the other rather than at the same time.
 
 ## Saving through Serial Connection
 
@@ -63,8 +64,6 @@ For my third modification, I CADed the case and printed it. I wanted to do this 
 <img src="caseproject.png" width="600" height="450">
 
 ↑ photo of project with case
-
-## 
 
 ## Code with Modifications
 
